@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mvcCrudModelStoreContainer" CdmEntityContainer="dbModels">
+    <EntitySetMapping Name="registeredUser">
+      <EntityTypeMapping TypeName="mvcCrudModel.registeredUser">
+        <MappingFragment StoreEntitySet="registeredUser">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="phoneNum" ColumnName="phoneNum" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product">
+      <EntityTypeMapping TypeName="mvcCrudModel.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="sellerUsername" ColumnName="sellerUsername" />
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="condition" ColumnName="condition" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

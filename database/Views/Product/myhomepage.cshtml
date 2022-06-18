@@ -1,0 +1,585 @@
+﻿@{
+    <!-- ViewBag.Title = "Index"; -->
+    Layout = null;
+
+}
+
+<!--
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+-->
+@model IEnumerable<database.Models.product>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECONDNEW</title>
+    <!--<link rel="stylesheet" href="~/Views/css/style.css" />-->
+    <style>
+        body {
+            background-color: #c6bcb6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar {
+            background: #4f3222;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .navbar__container {
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
+            z-index: 1;
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        #navbar__logo {
+            background-color: whitesmoke;
+            background-size: 100%;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .fa_gem {
+            margin-right: 0.5rem;
+        }
+
+        .navbar__menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            text-align: center;
+        }
+
+        .navbar__item {
+            height: 80px;
+        }
+
+        .navbar__links {
+            color: whitesmoke;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 0 1rem;
+            height: 100%;
+        }
+
+        .navbar__btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+            width: 100%;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            padding: 10px 20px;
+            height: 100%;
+            width: 100%;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            background: #bbab9b;
+            color: white;
+        }
+
+            .button:hover {
+                background: #d4ac6e;
+                transition: all 0.3s ease;
+            }
+
+        .navbar__links:hover {
+            color: #534f4b;
+            transition: all 0.3s ease;
+        }
+
+        .navbar__container .search-container {
+            float: right;
+        }
+
+        .navbar__container input[type=text] {
+            height: 40px;
+            border-radius: 40px;
+            padding: 15px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+            color: #674d3c;
+        }
+
+        .navbar__container button {
+            float: right;
+            padding: 6px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #f0efef;
+            font-size: 17px;
+            border: none;
+            height: 40px;
+            border-radius: 40px;
+            cursor: pointer;
+            color: black;
+            font-weight: bold;
+        }
+
+            .navbar__container button:hover {
+                background: #a2836e;
+            }
+
+
+        .custom-select {
+            justify-content: space-between;
+            float: right;
+            margin-right: 100px;
+        }
+
+        .select {
+            padding: 8px 12px;
+            background-color: #a2836e;
+            border: 2px solid #674d3c;
+            cursor: pointer;
+            border-radius: 10px;
+            font-weight: bold;
+            border: 1px solid;
+            color: black;
+        }
+
+            .select:focus,
+            .select:hover {
+                outline: none;
+                border: 1px solid white;
+            }
+
+            .select option {
+                background: #FAEBD7;
+            }
+
+        select > option:hover {
+            color: yellow;
+            cursor: pointer;
+        }
+
+        .radio {
+            border: solid 1px;
+            display: flex;
+            align-items: center;
+            border-radius: 3rem;
+            overflow: hidden;
+            max-width: 250px;
+            margin: 50px auto;
+        }
+
+            .radio input[type="radio"] {
+                display: none;
+            }
+
+            .radio label {
+                background: #FFFAF0;
+                padding: 1rem;
+                width: 250px;
+                border-right: solid 1px;
+            }
+
+            .radio input[type="radio"]:checked + label {
+                background: #a2836e;
+                color: white;
+            }
+
+        .card {
+            background-color: rgba(215, 195, 190, 0.65);
+            margin: 30px;
+        }
+
+        .card2 {
+            background-color: rgba(255,255,255,0.5);
+            margin: 30px;
+            width: 50%;
+            object-position: center;
+        }
+
+        .prdctbtn {
+            float: right;
+            padding: 6px;
+            margin-top: 8px;
+            margin-right: 80px;
+            background: #f0efef;
+            font-size: 17px;
+            border: none;
+            height: 40px;
+            border-radius: 40px;
+            cursor: pointer;
+            color: black;
+            font-weight: bold;
+            margin-top: 70px;
+        }
+
+        input[type=text] {
+            padding: 6px 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        .productdesc {
+            width: 100%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            resize: none;
+        }
+
+        .removebtn {
+            padding: 6px;
+            background: #f0efef;
+            font-size: 17px;
+            border: none;
+            height: 40px;
+            border-radius: 40px;
+            cursor: pointer;
+            color: black;
+            font-weight: bold;
+            margin-left: 50px;
+        }
+
+        .uploadbtn {
+            padding: 6px;
+            background: #f0efef;
+            font-size: 17px;
+            border: none;
+            height: 40px;
+            border-radius: 40px;
+            cursor: pointer;
+            color: black;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-left: 700px;
+        }
+
+
+
+
+        .form-input {
+            margin-top: 20px;
+            width: 230px;
+            padding: 20px;
+            background: #fff;
+            background-image: url("https://icons.iconarchive.com/icons/iconsmind/outline/48/Photos-icon.png");
+            background-repeat: no-repeat;
+            background-position-y: 30%;
+            background-position-x: 50%;
+            box-shadow: -3px -3px 7px rgba(94, 104, 121, 0.377), 3px 3px 7px rgba(94, 104, 121, 0.377);
+        }
+
+            .form-input img {
+                width: 100%;
+                display: none;
+                margin-bottom: 30px;
+                width: 180px;
+                height: 180px;
+            }
+
+            .form-input input {
+                display: none;
+            }
+
+            .form-input label {
+                display: block;
+                width: 45%;
+                height: 45px;
+                margin-left: 25%;
+                margin-top: 40%;
+                line-height: 50px;
+                text-align: center;
+                background: #1172c2;
+                color: #fff;
+                font-size: 15px;
+                font-family: "Open Sans",sans-serif;
+                text-transform: Uppercase;
+                font-weight: 600;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+        .phototitle {
+            font-family: "Open Sans",sans-serif;
+            margin-left: 650px;
+            font-size: 25px;
+        }
+
+        .wrapper {
+            padding: 60px;
+        }
+
+        .image--cover {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center right;
+        }
+
+        .prductdesc {
+            margin-left: 400px;
+            width: 30%;
+            height: 250px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            resize: none;
+        }
+
+        .productdesctitle {
+            margin-left: 800px;
+            font-family: "Open Sans",sans-serif;
+            font-size: 25px;
+        }
+
+
+
+        .column {
+            float: left;
+            width: 25%;
+            padding: 0 10px;
+        }
+
+        .row {
+            margin: 0 -5px;
+        }
+
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+
+        h4 a {
+            color: #c1502e;
+            text-decoration: none;
+        }
+
+            h4 a:hover {
+                color: #d4ac6e;
+            }
+
+
+        .column2 {
+            float: left;
+            width: 10%;
+            padding: 0 5px;
+        }
+
+        .row2 {
+            margin: 0 -5px;
+        }
+
+            .row2:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+
+        label {
+            display: block;
+            font: 1rem 'Fira Sans', sans-serif;
+        }
+
+        input,
+        label {
+            margin: .4rem 0;
+        }
+
+        .favori {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            padding: 10px 20px;
+            height: 100%;
+            width: 100px;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            background: #c1502e;
+            color: white;
+            cursor: pointer;
+        }
+
+            .favori:hover {
+                background: #d4ac6e;
+                transition: all 0.3s ease;
+            }
+    </style>
+
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="~/Product/myhomepage" id="navbar__logo">SECOND NEW</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+
+                <li class="navbar__item">
+                    <a href="filter" class="navbar__links"> Art </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="filter" class="navbar__links"> Sport </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="filter" class="navbar__links"> Music </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="filter" class="navbar__links"> Book </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="filter" class="navbar__links"> Game </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="filter" class="navbar__links"> Handmade </a>
+                </li>
+                <li>
+                    <div class="search-container">
+                        <input type="text" placeholder="Enter your search" name="search">
+
+                    </div>
+
+                <li>
+                    <form action="filter">
+                        <button type="submit">Search</button>
+                    </form>
+
+                </li>
+
+
+                <li>
+                    <div class="profile-select">
+                        <select class="selected" onchange="location = this.value;">
+                            <option>Profile</option>
+                            <option value="myprofile">My Profile</option>
+                            <option value="favorites">Favorites</option>
+                            <option> </option>
+
+                        </select>
+                    </div>
+
+                </li>
+
+                <li>
+
+                    <button type="submit">@Html.ActionLink("Logout", "Logout", "Login")</button>
+
+
+                </li>
+
+                
+
+
+            </ul>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="radio">
+            <input type="radio" name="secim" id="r1">
+            <label for="r1">Popular</label>
+
+            <input type="radio" name="secim" id="r2">
+            <label for="r2">Newest</label>
+
+            <input type="radio" name="secim" id="r3">
+            <label for="r3">Sale</label>
+
+        </div>
+
+
+
+
+        <div class="custom-select">
+            <select class="select">
+                <option disabled selected>Select sorting</option>
+                <option>Sort by Default</option>
+                <option>Sort by Decrease</option>
+                <option>Sort by Increase</option>
+            </select>
+        </div>
+    </div>
+
+    <section class="products" id=products>
+        <div class="product_slider">
+
+            <div class="row">
+
+                @foreach (var item in Model)
+                {
+                    <div class="column">
+
+                        <div class="product_box">
+                            <!--<img src="pencil.png" alt="" class="card_image"> -->
+                            <h3 class="card_title">
+
+                                @Html.ActionLink("Logout", "Logout", "Login") @Html.DisplayFor(modelItem => item.name)
+                                <p> Date: @Html.DisplayFor(modelItem => item.date) </p>
+                                <p> Condition: @Html.DisplayFor(modelItem => item.condition)</p>
+                                <p class="price">@Html.DisplayFor(modelItem => item.price)</p>
+                                <h4> Condition: @Html.DisplayFor(modelItem => item.status)</h4>
+                                <h4> Seller: <a href="otheruserprofile.html"> @Html.DisplayFor(modelItem => item.sellerUsername) </a></h4>
+
+                            </h3>
+                        </div>
+
+                    </div>
+
+                }
+
+            </div>
+
+        </div>
+
+    </section>
+</body>
+</html>

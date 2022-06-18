@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECONDNEW</title>
+    <link rel="stylesheet" href="Site.css" />
+
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">SECOND NEW</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Art </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Sport </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Music </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Book </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Game </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Handmade </a>
+                </li>
+                <li>
+                    <div class="search-container">
+                        <input type="text" placeholder="Enter your search" name="search">
+
+                    </div>
+                <li>
+                    <form action="/filter.html">
+                        <button type="submit">Search</button>
+                    </form>
+
+                </li>
+
+
+                <li>
+                    <div class="profile-select">
+                        <select class="select" onchange="location = this.value;">
+                            <option disabled selected>Profile</option>
+                            <option value="/myprofile.html">My Profile</option>
+                            <option value="/favorites.html">Favorites</option>
+                            <option value="/index.html">Log Out</option>
+                        </select>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+   
+
+    <div class="card">
+
+     
+        <label class="productdesctitle">PRODUCT DESCRIPTION</label>
+
+        <div class="row">
+            <div class="column">
+                <div class="panel" style="margin-left:40px;">
+                    <div class="w3-content w3-display-container">
+                        <img class="mySlides" style="width: 700px; height: 400px;" src="https://contents.mediadecathlon.com/p1278144/k$63a1f1e5847971e5277a42f125d5aac9/sq/hibrit-bisiklet-28-jant-siyah-riverside-100.jpg?format=auto&f=720x720">
+                        <img class="mySlides" style="width: 700px; height: 400px;" src="https://www.seekpng.com/png/small/382-3820098_contact-details-book-circle-vector.png">
+                        <img class="mySlides" style="width: 700px; height: 400px;" src="https://wallpaperaccess.com/full/2786602.jpg">
+                    </div>
+                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+
+                </div>
+
+
+            </div>
+
+            <div>
+                <textarea disabled class="prductdesc" id=prductdesc" name="productdesc"></textarea>
+            </div>
+
+            <div style="margin-left:800px">
+                <label style="margin-right:20px" for="category">Category : </label>
+                <text disabled type="text" id="category" name="Category"> Sport</text>
+            </div>
+            <div style="margin-left:800px">
+                <label style="margin-right:16px" for="condition">Condition : </label>
+                <text disabled type="text" id="condition" name="Condition">Well</text>
+            </div>
+            <div style="margin-left:800px; margin-top:30px;">
+                <label style="margin-right:70px" for="category">Price $ </label>
+                
+                <h4 style="margin-left:200px;"> Seller: <a href="otheruserprofile.html"> Seller 4 Profile </a></h4>
+
+                <form action="/favorites.html">
+                    <button class="favori">Add Favorites</button>
+                  </form>
+            </div>
+
+        </div>
+
+
+        <div class="row2" style="margin-left:30px;">
+            <div class="column2">
+                <input disabled type="date" data-date="" data-date-format="DD MMMM YYYY" value="2021-08-09">
+            </div>
+            <div class="column2">
+                <p><b> SALE</b></p>
+            </div>
+            <div class="column2">
+                <code>Exchangable</code>
+            </div>
+            </div>
+        </div>
+
+
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="editprofile.css"/>
+    <div id="nav-placeholder">
+        <script>
+            $(function(){
+              $("#nav-placeholder").load("navbar.html");
+            });
+
+            function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(200);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+            </script>
+    </div>
+</head>
+<h1 style="margin-left: 40px; margin-top: 30px;"> Edit My Profile </h1>
+<body>
+    
+    <div class="editbox">
+   <form action="" class="form">
+
+
+    <img id="blah" src="#"  class="center">
+
+    <label for="myfile"  style="width: fit-content; height: fit-content;">Upload Profile Picture:</label>
+    <input type="file" name="myfile" onchange="readURL(this);" >
+    
+    
+        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Surname">
+        <input type="text" placeholder="Email">
+        <input type="text" placeholder="Username">
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone Number / 5xx-555-5555">
+        <input type="password" minlength="8" required placeholder="Password">
+        
+    
+        <input type="submit" formaction="myprofile.html" value="Save Changes">
+
+   </form>
+    </div>
+
+</body>
+
+</html>

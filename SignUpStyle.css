@@ -1,0 +1,84 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #4f3222;
+}
+
+.signup-box{
+    width: 360px;
+    height: 620px;
+    margin: auto;
+    background-color: #f0efef;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 45px;
+}
+
+h1{
+    text-align: center;
+    padding-top: 15px;
+    color: #4f3222;
+}
+
+form{
+    width: 300px;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+form label{
+    display: flex;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+form input{
+    width: 100%;
+    padding:7px;
+    border: none;
+    margin: 12px 0;
+    border: 2px solid #674d3c;
+    border-radius: 24px;
+    outline: none;
+}
+
+.signup-box form input[type="text"]:focus, .signup-box input[type="password"]:focus{
+    width: 280px;
+    border-color:#d4ac6e;
+
+}
+
+input[type="submit"]{
+    width: 320px;
+    height: 35px;
+    margin-top: 20px;
+    border:none;
+    border-radius: 24px; 
+    border: 2px solid  #c1502e;
+    color:#674d3c;;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+input[type="submit"]:hover{
+    background: #c1502e;
+    color:white;
+}
+
+p{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.para a{
+    color: #d4ac6e;
+    cursor: pointer;
+
+}
+
+.para a:hover{
+    color: #c1502e;
+}

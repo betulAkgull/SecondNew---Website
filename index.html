@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>SECONDNEW</title>
+    <link rel="stylesheet" href="style.css"/>
+
+ 
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">SECOND NEW</a>  
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Art </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Sport </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Music </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Book </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Game </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Handmade </a>
+                </li>
+                <li>
+                    <div class="search-container">
+                        <input type="text" placeholder="Enter your search" name="search">
+
+                    </div>
+
+                <li>
+                    <form action="/filter.html">
+                        <button type="submit">Search</button>
+                    </form>
+
+                </li>
+                
+
+                <li class="navbar__btn">
+                    <a href="/signup.html" class="button"> SignUp </a>
+                </li>
+
+                <li class="navbar__btn">
+                    <a href="/signin.html" class="button"> Login </a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="radio">
+            <input type="radio" name="secim" id="r1">
+            <label for="r1">Popular</label>
+
+            <input type="radio" name="secim" id="r2">
+            <label for="r2">Newest</label>
+
+            <input type="radio" name="secim" id="r3">
+            <label for="r3">Sale</label>
+
+        </div>
+
+
+
+
+     <div class="custom-select">
+            <select class="select">
+                <option disabled selected>Select sorting</option>
+                <option>Sort by Default</option>
+                <option>Sort by Decrease</option>
+                <option>Sort by Increase</option>
+            </select>
+    </div>
+    </div>
+
+    <section class="products" id= products>
+        <div class="product_slider">
+            <div class="row">
+                <div class="column">
+                <div class="product_box">
+                    <img src="book.jpg" alt="" class="card_image">
+                     <h3 class="card_title"> <a href="/ViewProduct.html">Product 1 Name</a></h4>
+                        <p class="price">5$</p>
+                        <h4> Seller: <a href="otheruserprofile.html"> Seller 1 Profile </a></h4>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="product_box">
+                    <img src="film.jpg" alt="" class="card_image">
+                     <h3 class="card_title"> <a href="/ViewProduct.html">Product 2 Name</a></h4>
+                        <p class="price">10$</p>
+                        <h4> Seller: <a href="otheruserprofile.html"> Seller 2 Profile </a></h4>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="product_box">
+                    <img src="camera.png" alt="" class="card_image">
+                     <h3 class="card_title"> <a href="/ViewProduct.html">Product 3 Name</a></h4>
+                        <p class="price">50$</p>
+                        <h4> Seller: <a href="otheruserprofile.html"> Seller 3 Profile </a></h4>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="product_box">
+                    <img src="pencil.png" alt="" class="card_image">
+                     <h3 class="card_title"> <a href="/ViewProduct.html">Product 4 Name</a></h4>
+                    <p class="price">2$</p>
+                    <h4> Seller: <a href="otheruserprofile.html"> Seller 4 Profile </a></h4>
+                </div>
+            </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+</body>
+</html>

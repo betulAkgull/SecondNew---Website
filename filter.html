@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECONDNEW</title>
+    <link rel="stylesheet" href="style.css" />
+
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">SECOND NEW</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Art </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Sport </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Music </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Book </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Game </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Handmade </a>
+                </li>
+                <li>
+                    <div class="search-container">
+                        <input type="text" placeholder="Enter your search" name="search">
+
+                    </div>
+                <li>
+                    <form action="/filter.html">
+                        <button type="submit">Search</button>
+                    </form>
+
+                </li>
+                </li>
+
+                <li>
+                    <div class="profile-select">
+                        <select class="selected" onchange="location = this.value;">
+                            <option disabled selected>Profile</option>
+                            <option value="/myprofile.html">My Profile</option>
+                            <option value="/favorites.html">Favorites</option>
+                            <option value="/index.html">Log Out</option>
+                        </select>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+    <section class="products" id=products>
+        <div class="product_slider">
+            <div class="row">
+                <div class="column">
+
+                    <div style="background-color: rgba(215, 195, 190, 0.65);height: 500px">
+
+                        <h5 style=" font-size:30px; text-align:center; color:#674d3c; " class="title1">Filter</h5>
+
+
+                        <div style="margin-top:100px; margin-left:10px;">
+
+
+                            <select class="select" placeholder="category">
+                                <option disabled selected>Select A Category </option>
+                                <option>Art </option>
+                                <option>Sport</option>
+                                <option>Music</option>
+                                <option>Game</option>
+                                <option>Book</option>
+                                <option>Hand made</option>
+                            </select>
+
+
+
+
+                            <div style="margin-top:30px; margin-left:10px;">
+                                <label>Condition</label>
+                                <input type="radio" name="condition" id="c1">
+                                <label for="c1">New</label>
+
+                                <input type="radio" name="condition" id="c2">
+                                <label for="c2">Well</label>
+
+                                <input type="radio" name="condition" id="c3">
+                                <label for="c3">Used</label>
+
+
+                            </div>
+
+                            <div style="margin-top:30px; margin-left:10px; margin-right:10px;">
+                                <label>Price : </label>
+                                <input type="range" name="rangeInput" min="1" max="500" onchange="updateTextInput(this.value);">
+                                <input type="text" id="textInput" value="">
+                                <label>$</label>
+
+                            </div>
+
+                            <div style="margin-top:30px; margin-left:10px;">
+                                <input type="checkbox" name="exchangeable" id="e1">
+                                <label for="e1">Exchangeable</label>
+                                <input type="checkbox" name="onsale" id="e2" style="margin-left:20px;">
+                                <label for="e2">Sale</label>
+
+                            </div>
+
+                            <div class="row" style="padding:30px;">
+                                <form action="/filter.html" class="column">
+                                    <button class="clearbtn" type="submit" name="clear">CLEAR</button>
+
+                                </form>
+                                <form action="/filter.html" class="column">
+                                    <button class="filterbtn" type="submit" name="filter">FILTER</button>
+
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="product_box">
+                        <img src="book.jpg" alt="" class="card_image">
+                        <h3 class="card_title">
+                            <a href="/ViewProduct.html">Product 1 Name</a></h4>
+                            <p class="price">5$</p>
+                            <h4> Seller: <a href="otheruserprofile.html"> Seller 1 Profile </a></h4>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="product_box">
+                        <img src="film.jpg" alt="" class="card_image">
+                        <h3 class="card_title">
+                            <a href="/ViewProduct.html">Product 2 Name</a></h4>
+                            <p class="price">10$</p>
+                            <h4> Seller: <a href="otheruserprofile.html"> Seller 2 Profile </a></h4>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="product_box">
+                        <img src="camera.png" alt="" class="card_image">
+                        <h3 class="card_title">
+                            <a href="/ViewProduct.html">Product 3 Name</a></h4>
+                            <p class="price">50$</p>
+                            <h4> Seller: <a href="otheruserprofile.html"> Seller 3 Profile </a></h4>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        function updateTextInput(val) {
+            document.getElementById('textInput').value = val;
+        }
+    </script>
+
+</body>
+</html>

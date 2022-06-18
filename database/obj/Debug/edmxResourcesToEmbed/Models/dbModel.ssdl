@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mvcCrudModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'mvcCrud.dbo.product' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="sellerUsername" />
+      <PropertyRef Name="categoryId" />
+      <PropertyRef Name="productId" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="description" />
+      <PropertyRef Name="price" />
+      <PropertyRef Name="date" />
+      <PropertyRef Name="condition" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="sellerUsername" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="categoryId" Type="int" Nullable="false" />
+    <Property Name="productId" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="float" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="condition" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="status" Type="char" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="registeredUser">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="surname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phoneNum" Type="int" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="mvcCrudModelStoreContainer">
+    <EntitySet Name="registeredUser" EntityType="Self.registeredUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="product" EntityType="Self.product" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [product].[sellerUsername] AS [sellerUsername], 
+    [product].[categoryId] AS [categoryId], 
+    [product].[productId] AS [productId], 
+    [product].[name] AS [name], 
+    [product].[description] AS [description], 
+    [product].[price] AS [price], 
+    [product].[date] AS [date], 
+    [product].[condition] AS [condition], 
+    [product].[status] AS [status]
+    FROM [dbo].[product] AS [product]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

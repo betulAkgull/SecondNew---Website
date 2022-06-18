@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+}
+
+@model IEnumerable<database.Models.registeredUser>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <style>
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="nav-placeholder">
+        <script>
+            $(function () {
+                $("#nav-placeholder").load("navbar.html");
+            });
+        </script>
+    </div>
+    <br>
+
+    <h1 style="text-align:center; color: #4f3222;"> My Profile </h1>
+    <section>
+        <div class="center">
+            <div class="row">
+                <div class="column">
+                    <div class="product_box" style="text-align: center;">
+                        <img style="margin-left: 280px; height: 15rem; margin-top: 10px;" src="profile.jpg" alt="" class="card_image">
+                        <h4 style="margin-left: 350px; color: #c1502e; margin-top: 10px;" src="profile.jpg" class="card_title">  @Session["username"].ToString()</h4>
+                        <h3 style="margin-left: 350px; color: #4f3222; margin-top: 10px;" src="profile.jpg" class="card_title"> PhoneNumber</h3>
+
+
+                        <a href="editmyprofile.html" class="button" style="width: 200px; height: fit-content; margin-left:300px; margin-top: 10px;"> Edit My Profile </a>
+
+                        <a href="AddNewProduct.html" class="button" style="width: 200px; height: fit-content; margin-left:300px; margin-top: 10px;"> Add New Product </a>
+
+
+
+
+                    </div>
+                </div>
+    </section>
+    <section class="products" id=products>
+        <div class="product_slider">
+            <div class="row">
+
+
+                <div class="column">
+                    <div class="product_box">
+                        <img src="kirke.jpg" alt="" class="card_image">
+                        <h3 class="card_title">
+                            <a href="/ViewProduct.html">Product 1 Name</a></h4>
+                            <p class="price">5$</p>
+                            <h4><a href="EditProduct.html"> Edit </a></h4>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>
+

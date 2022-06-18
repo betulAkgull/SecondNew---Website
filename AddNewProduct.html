@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECONDNEW</title>
+    <link rel="stylesheet" href="Site.css" />
+  
+
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">SECOND NEW</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Art </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Sport </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Music </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Book </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Game </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/filter.html" class="navbar__links"> Handmade </a>
+                </li>
+                <li>
+                    <div class="search-container">
+                        <input type="text" placeholder="Enter your search" name="search">
+
+                    </div>
+                <li>
+                    <form action="/filter.html">
+                        <button type="submit">Search</button>
+                    </form>
+
+                </li>
+
+
+                <li class="custom-select">
+                    <select class="select" onchange="location = this.value;"" >
+                        <option disabled selected>Profile</option>
+                        <option value="/myprofile.html">My Profile</option>
+                        <option value="/favorites.html">Favorites</option>
+                        <option value="/index.html">Log Out</option>
+                    </select>
+                </li>
+
+
+            </ul>
+
+
+        </div>
+    </nav>
+
+    <div class="card">
+        <label class="phototitle" >ADD PRODUCT PHOTOS</label>
+        <div class="row">
+            <div class="column">
+                <div class="form-input">
+                    <div class="preview">
+                        <img id="file-ip-1-preview">
+                        <label for="file-ip-1">Upload</label>
+                        <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event,'file-ip-1-preview');">
+                    </div>
+
+                </div>
+            </div>
+            <div class="column">
+                <div class="form-input">
+                    <div class="preview">
+                        <img id="file-ip-2-preview">
+                        <label for="file-ip-2">Upload</label>
+                        <input type="file" id="file-ip-2" accept="image/*" onchange="showPreview(event,'file-ip-2-preview');">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="column">
+                <div class="form-input">
+                    <div class="preview">
+                        <img id="file-ip-3-preview">
+                        <label for="file-ip-3">Upload</label>
+                        <input type="file" id="file-ip-3" accept="image/*" onchange="showPreview(event,'file-ip-3-preview');">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="column">
+                <div class="form-input">
+                    <div class="preview">
+                        <img id="file-ip-4-preview">
+                        <label for="file-ip-4">Upload</label>
+                        <input type="file" id="file-ip-4" accept="image/*" onchange="showPreview(event,'file-ip-4-preview');">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+   
+    <div class="card">
+
+        <div style="margin-left:30px">
+            <label for="productTitle">Product Title</label>
+        </div>
+        <input style="margin-left:30px" type="text" id="productTitle" name="ProductTitle">
+        <div style="margin:30px">
+            <label for="productdesc">Product Description</label>
+            <textarea class="productdesc" id=productdesc" name="productdesc"></textarea>
+        </div>
+
+        <div class="row" style="margin-left:40px">
+            <div class="column">Category</div>
+            <div class="column">Condition</div>
+            <div class="column">Price</div>
+            <div class="column">Exchangeable</div>
+        </div>
+
+        <div class="row" style="margin:30px">
+            <div class="column">
+
+                <select class="select" placeholder="category">
+                    <option disabled selected>Select A Category </option>
+                    <option>Art </option>
+                    <option>Sport</option>
+                    <option>Music</option>
+                    <option>Game</option>
+                    <option>Book</option>
+                    <option>Hand made</option>
+                </select>
+            </div>
+
+
+
+            <div class="column">
+                <input type="radio" name="condition" id="c1">
+                <label for="c1">New</label>
+
+                <input type="radio" name="condition" id="c2">
+                <label for="c2">Well</label>
+
+                <input type="radio" name="condition" id="c3">
+                <label for="c3">Used</label>
+
+            </div>
+            <div class="column">
+                <label for="tentacles">Price: </label>
+
+                    <input type="number" id="tentacles" name="tentacles" min="1" max="10000">
+            </div>
+
+
+            <div class="column">
+                <input type="checkbox" name="exchangeable" id="e1" style="margin-left:20px">
+                <label for="e1">Exchangeable</label>
+                <input type="checkbox" name="onsale" id="e1" style="margin-left:20px">
+                <label for="e1">Sale</label>
+
+            </div>
+
+            <form action="/myprofile.html">
+                <button class="uploadbtn" type="submit" name="upload">UPLOAD</button>
+               
+            </form>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+    <script>
+        function showPreview(event,id) {
+            if (event.target.files.length > 0) {
+                var i = event.target.files.length-1;
+                var src = URL.createObjectURL(event.target.files[i]);
+                var preview = document.getElementById(id);
+                preview.src = src;
+                preview.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="mvcCrudModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'mvcCrud.dbo.product' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="sellerUsername" />
+            <PropertyRef Name="categoryId" />
+            <PropertyRef Name="productId" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="description" />
+            <PropertyRef Name="price" />
+            <PropertyRef Name="date" />
+            <PropertyRef Name="condition" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="sellerUsername" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="categoryId" Type="int" Nullable="false" />
+          <Property Name="productId" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="float" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="condition" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="status" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="registeredUser">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="userid" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="surname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="phoneNum" Type="int" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="mvcCrudModelStoreContainer">
+          <EntitySet Name="registeredUser" EntityType="Self.registeredUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [product].[sellerUsername] AS [sellerUsername], 
+    [product].[categoryId] AS [categoryId], 
+    [product].[productId] AS [productId], 
+    [product].[name] AS [name], 
+    [product].[description] AS [description], 
+    [product].[price] AS [price], 
+    [product].[date] AS [date], 
+    [product].[condition] AS [condition], 
+    [product].[status] AS [status]
+    FROM [dbo].[product] AS [product]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mvcCrudModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="registeredUser">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="userid" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phoneNum" Type="Int32" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="sellerUsername" />
+            <PropertyRef Name="categoryId" />
+            <PropertyRef Name="productId" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="description" />
+            <PropertyRef Name="price" />
+            <PropertyRef Name="date" />
+            <PropertyRef Name="condition" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="sellerUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="categoryId" Type="Int32" Nullable="false" />
+          <Property Name="productId" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="price" Type="Double" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="condition" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="dbModels" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="registeredUser" EntityType="Self.registeredUser" />
+          <EntitySet Name="product" EntityType="Self.product" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mvcCrudModelStoreContainer" CdmEntityContainer="dbModels">
+          <EntitySetMapping Name="registeredUser">
+            <EntityTypeMapping TypeName="mvcCrudModel.registeredUser">
+              <MappingFragment StoreEntitySet="registeredUser">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="phoneNum" ColumnName="phoneNum" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product">
+            <EntityTypeMapping TypeName="mvcCrudModel.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="sellerUsername" ColumnName="sellerUsername" />
+                <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="condition" ColumnName="condition" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
